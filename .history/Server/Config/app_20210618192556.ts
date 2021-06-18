@@ -72,13 +72,6 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
-//implement Auth 
-passport.use(User.createStrategy());
-
-//serialize and deserialize user data
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
-
 
 // create routing through event handling
 app.use('/', indexRouter);
