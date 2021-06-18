@@ -7,7 +7,7 @@ import mongoose, { mongo } from 'mongoose';
 
 // attach router files
 import indexRouter from '../Routes/index';
-import contactRouter from '../Routes/contact';
+import clothingRouter from '../Routes/clothing';
 
 // Express Web App Configuration
 const app = express();
@@ -41,7 +41,7 @@ app.use(express.static(path.join(__dirname, '../../node_modules')));
 
 // create routing through event handling
 app.use('/', indexRouter);
-app.use('/contact-list', contactRouter);
+app.use('/clothing-list', clothingRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) 
