@@ -23,12 +23,4 @@ router.get('/services', DisplayServicesPage);
 /* GET contact page. */
 router.get('/contact', DisplayContactPage);
 
-/* ---------------------------------------------------------------------------------- */
-
-/* route to display and process login page. */
-
-/* route to display and process register page. */
-
-/* route to display and process logout page. */
-
 //module.exports = router;
