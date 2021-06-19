@@ -123,5 +123,6 @@ export function ProcessLogoutPage(req: Request, res: Response, next: NextFunctio
 {
    req.logout();
    res.redirect('/login')
-    
+    //request.logout();
+    //return res.redirect('/login');
 }
