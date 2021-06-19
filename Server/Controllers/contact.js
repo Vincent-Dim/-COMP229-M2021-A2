@@ -35,12 +35,12 @@ function ProcessEditPage(req, res, next) {
     let id = req.params.id;
     let updatedcontactItem = new contact_1.default({
         "_id": id,
-        "name": req.body.name,
-        "brand": req.body.brand,
-        "category": req.body.category,
-        "colour": req.body.colour,
-        "size": req.body.size,
-        "price": req.body.price
+        "username": req.body.username,
+        "password": req.body.password,
+        "email": req.body.email,
+        "city": req.body.city,
+        "profession": req.body.profession,
+        "age": req.body.age
     });
     contact_1.default.updateOne({ _id: id }, updatedcontactItem, {}, (err) => {
         if (err) {
@@ -53,12 +53,12 @@ function ProcessEditPage(req, res, next) {
 exports.ProcessEditPage = ProcessEditPage;
 function ProcessAddPage(req, res, next) {
     let newContact = new contact_1.default({
-        "name": req.body.name,
-        "brand": req.body.brand,
-        "category": req.body.category,
-        "colour": req.body.colour,
-        "size": req.body.size,
-        "price": req.body.price
+        "username": req.body.username,
+        "password": req.body.password,
+        "email": req.body.email,
+        "city": req.body.city,
+        "profession": req.body.profession,
+        "age": req.body.age
     });
     contact_1.default.create(newContact, (err) => {
         if (err) {

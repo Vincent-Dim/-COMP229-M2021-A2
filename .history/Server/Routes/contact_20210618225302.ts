@@ -16,7 +16,7 @@ router.get('/', DisplaycontactListPage);
 router.get('/add', AuthGuard, DisplayAddPage);
 
 /* GET - display /contact-list/edit/:id page. */
-router.get('/edit/:id', AuthGuard, DisplayEditPage);
+router.get('/edit/:id', AuthGuard,DisplayEditPage);
 
 /* POST - process /contact-list/add page */
 router.post('/add', AuthGuard, ProcessAddPage);
