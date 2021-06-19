@@ -60,18 +60,7 @@ export function ProcessLoginPage(req: Request, res: Response, next: NextFunction
             req.flash('loginMessage', 'Authentication Error');
             return res.redirect('/login');
         }
-
-        req.login(user, (err) =>
-        {
-            if(err)
-        {
-            console.error(err);
-            return next(err);
-        }
-
-        return res.redirect('/contact-list');
-        });
-    })(req, res, next);
+    })
 }
 
 export function DisplayRegisterPage(req: Request, res: Response, next: NextFunction): void
@@ -86,33 +75,6 @@ export function DisplayRegisterPage(req: Request, res: Response, next: NextFunct
 
 export function ProcessRegisterPage(req: Request, res: Response, next: NextFunction): void
 {
-    //instantiate new user object
-    let newUser = new User 
-    ({
-        username: req.body.username,
-        emailAddress: req.body.emailAddress,
-        displayName: req.body.FirstName + " " + req.body.LastName
-    });
-
-    User.register(newUser, req.body.password, (err)=>
-    {
-        if(err)
-        {
-            console.error('Error: Inserting New User');
-            if(err.name == "UserExistsError")
-            {
-                console.error('Error: User Already Exists');
-            }
-            req.flash('registerMessage', 'Registration Error');
-
-            return res.redirect('/register');
-        }
-        // login after successful authentication
-        return passport.authenticate('local')(req, res, () =>{
-            return res.redirect('/contact-list');
-
-        });
-    })
 
 }
 

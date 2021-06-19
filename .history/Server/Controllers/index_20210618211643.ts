@@ -91,8 +91,8 @@ export function ProcessRegisterPage(req: Request, res: Response, next: NextFunct
     ({
         username: req.body.username,
         emailAddress: req.body.emailAddress,
-        displayName: req.body.FirstName + " " + req.body.LastName
-    });
+        displayName:
+    })
 
     User.register(newUser, req.body.password, (err)=>
     {
@@ -108,10 +108,7 @@ export function ProcessRegisterPage(req: Request, res: Response, next: NextFunct
             return res.redirect('/register');
         }
         // login after successful authentication
-        return passport.authenticate('local')(req, res, () =>{
-            return res.redirect('/contact-list');
-
-        });
+        return passport.authenticate('local') 
     })
 
 }

@@ -91,27 +91,20 @@ export function ProcessRegisterPage(req: Request, res: Response, next: NextFunct
     ({
         username: req.body.username,
         emailAddress: req.body.emailAddress,
-        displayName: req.body.FirstName + " " + req.body.LastName
-    });
+        displayName:
+    })
 
     User.register(newUser, req.body.password, (err)=>
     {
         if(err)
         {
             console.error('Error: Inserting New User');
-            if(err.name == "UserExistsError")
+            if(err.name == "UserExistError")
             {
                 console.error('Error: User Already Exists');
+
             }
-            req.flash('registerMessage', 'Registration Error');
-
-            return res.redirect('/register');
         }
-        // login after successful authentication
-        return passport.authenticate('local')(req, res, () =>{
-            return res.redirect('/contact-list');
-
-        });
     })
 
 }
