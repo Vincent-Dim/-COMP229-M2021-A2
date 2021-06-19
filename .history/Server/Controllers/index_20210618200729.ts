@@ -47,6 +47,7 @@ export function ProcessLoginPage(req: Request, res: Response, next: NextFunction
     
 }
 
+
 export function DisplayRegisterPage(req: Request, res: Response, next: NextFunction): void
 {
     

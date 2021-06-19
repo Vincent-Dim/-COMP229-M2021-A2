@@ -47,6 +47,7 @@ export function ProcessLoginPage(req: Request, res: Response, next: NextFunction
     
 }
 
+
 export function DisplayRegisterPage(req: Request, res: Response, next: NextFunction): void
 {
     
@@ -55,9 +56,4 @@ export function DisplayRegisterPage(req: Request, res: Response, next: NextFunct
 export function ProcessRegisterPage(req: Request, res: Response, next: NextFunction): void
 {
 
-}
-
-export function ProcessLogoutPage(req: Request, res: Response, next: NextFunction): void
-{
-   
 }

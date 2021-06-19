@@ -30,11 +30,13 @@ router.get('/contact', DisplayContactPage);
 /* GET login page. */
 router.get('/login', DisplayLoginPage);
 
-/* POST login page. */
-router.post('/login', ProcessLoginPage);
-
 /* GET register page. */
 router.get('/register', DisplayRegisterPage);
+
+//--Process login and register pages upon user submit
+
+/* POST login page. */
+router.post('/login', ProcessLoginPage);
 
 /* POST register page. */
 router.post('/register', ProcessRegisterPage);
